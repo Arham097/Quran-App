@@ -11,8 +11,6 @@ const Home = () => {
     const fetchSurahs = async () => {
       const result = await quran.v4.chapters.findAll();
       dispatch(setSurahs(result));
-      const newRes = await quran.v4.verses.findByChapter("112");
-      console.log(newRes);
     };
     fetchSurahs();
   }, []);

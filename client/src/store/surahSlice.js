@@ -4,7 +4,8 @@ const surahSlice = createSlice({
   name: "surahs",
   initialState: {
     surahsList: [],
-    filteredSurahs: []
+    filteredSurahs: [],
+    surah: {}
   },
   reducers: {
     setSurahs: (state, actions) => {
@@ -13,9 +14,12 @@ const surahSlice = createSlice({
     },
     filterSurahs: (state, actions) => {
       state.filteredSurahs = actions.payload;
-      console.log(state.filteredSurahs)
+    },
+    getSurahById: (state, actions) => {
+      state.surah = actions.payload;
     }
+
   }
 });
-export const { setSurahs, filterSurahs } = surahSlice.actions;
+export const { setSurahs, filterSurahs, getSurahById } = surahSlice.actions;
 export default surahSlice;

@@ -7,7 +7,7 @@ const SurahList = () => {
   const filteredSurahs = useSelector((state) => state.surahs.filteredSurahs);
 
   return (
-    <div className="w-full h-full p-2 overflow-y-auto">
+    <div className="w-full h-full p-2 overflow-y-auto cursor-pointer">
       {filteredSurahs.map((surah, index) => (
         <SurahDetails
           key={index}

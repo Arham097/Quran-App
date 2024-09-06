@@ -27,9 +27,9 @@ const LeftSection = () => {
   };
 
   return (
-    <div className="bg-slate-300 basis-1/3 flex flex-col">
+    <div className="bg-white basis-1/3 flex flex-col">
       {/* // Search Bar */}
-      <div className="bg-slate-600 w-full h-28 flex items-center justify-center">
+      <div className="bg-slate-500 w-full h-24 flex items-center justify-center">
         <div className="flex items-center bg-white basis-9/12 border-2 border-slate-400">
           <FaSearch className="text-xl text-center w-2/12 " />
           <input
