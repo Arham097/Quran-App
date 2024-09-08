@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LeftSection from "../components/LeftSection";
 import RightSection from "../components/RightSection";
 import { useDispatch } from "react-redux";
@@ -14,11 +14,15 @@ const ReadQuran = () => {
     };
     fetchSurahs();
   }, []);
+  const [toggle, setToggle] = useState(false);
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
 
   return (
     <div className=" flex w-screen h-screen">
-      <LeftSection />
-      <RightSection />
+      <LeftSection toggle={toggle} />
+      <RightSection handleToggle={handleToggle} toggle={toggle} />
     </div>
   );
 };

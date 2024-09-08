@@ -11,3 +11,14 @@
 :root{
   overflow-x:hidden;
 }
+/* ::-webkit-scrollbar-track {
+  background-color: black;
+} */
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(0, 128, 128, 0.405);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 128, 128, 0.8);
+  border-radius: 10px;
+}

@@ -26,31 +26,25 @@ const Header = () => {
 
   return (
     <>
-      <header className="w-full h-16 mx-auto flex flex-col justify-between items-center bg-gradient-to-r from-teal-800 to-teal-600 px-1">
+      <header className="w-full h-16 mx-auto flex flex-col justify-between items-center bg-gradient-to-r from-teal-600 to-teal-700 px-1 border-b border-teal-500">
         <div className="w-full h-full flex justify-between items-center ">
           <div className="flex gap-x-3 ml-5 items-center ">
-            <img src="./../public/koran.png" alt="" width={40} height={40} />
-            <h1 className="text-3xl font-bold mt-1 max-md:text-xl max-sm:text-[1rem] text-white transition-all duration-150 ease-linear">
+            <img src="/koran.png" alt="" width={40} height={40} />
+            <h1 className="text-3xl font-bold mt-1 max-md:text-xl  text-white transition-all duration-150 ease-linear">
               Al-Quran
             </h1>
           </div>
-          <nav className="mr-5 max-md:hidden">
-            <ul className="flex gap-x-12 font-bold pt-2 max-lg:gap-x-10 text-lg  ">
+          <nav className="mr-5 max-sm:hidden">
+            <ul className="flex gap-x-12 font-bold pt-2 max-lg:gap-x-10 text-xl mr-2  ">
               <li className="hover:text-teal-400 text-white transition-all duration-200 ease-linear">
                 <Link to="/">Home</Link>
               </li>
               <li className="hover:text-teal-400  text-white transition-all duration-200 ease-linear">
                 <Link to="/read-quran">Read Quran</Link>
               </li>
-              <li className="hover:text-teal-400  text-white transition-all duration-200 ease-linear">
-                <Link to="/bookmarks">Bookmarks</Link>
-              </li>
-              <li className="hover:text-teal-400  text-white transition-all duration-200 ease-linear">
-                <Link to="/settings">Setting</Link>
-              </li>
             </ul>
           </nav>
-          <div className="md:hidden">
+          <div className="sm:hidden">
             {!toggle ? (
               <IoMenu
                 className="text-[35px] mr-5 text-white"
@@ -68,30 +62,20 @@ const Header = () => {
 
       {/* Conditionally Rendered Div */}
       {toggle && (
-        <div className="w-full bg-teal-600 flex flex-col transition-all duration-1000 ease-in-out">
+        <div className="w-full bg-teal-600 flex flex-col transition-all duration-1000 ease-in-out h-32 sm:hidden">
           <nav clas>
             <ul
-              className="flex flex-col gap-y-2 font-bold py-2 text-white "
+              className="flex flex-col gap-y-2 font-bold py-3 text-white "
               ref={headerLinks}
             >
-              <li className="hover:text-teal-400 border-b-2 px-4 py-2">
+              <li className="hover:text-teal-400 border-b-2 px-7 py-3">
                 <Link to="/" onClick={toggleMenu}>
                   Home
                 </Link>
               </li>
-              <li className="hover:text-teal-400 border-b-2 px-4 py-2">
-                <Link to="/about" onClick={toggleMenu}>
+              <li className="hover:text-teal-400  px-7 py-3">
+                <Link to="/read-quran" onClick={toggleMenu}>
                   Read Quran
-                </Link>
-              </li>
-              <li className="hover:text-teal-400 border-b-2 px-4 py-2">
-                <Link to="/post-property" onClick={toggleMenu}>
-                  BookMarks
-                </Link>
-              </li>
-              <li className="hover:text-teal-400 px-4 py-1">
-                <Link to="/contact" onClick={toggleMenu}>
-                  Settings
                 </Link>
               </li>
             </ul>

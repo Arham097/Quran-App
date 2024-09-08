@@ -7,13 +7,8 @@ const DetailSurahList = () => {
   return (
     <div className="w-full h-full bg-white overflow-y-auto ">
       {surahAyaths?.ayat?.length
-        ? surahAyaths.ayat.map((surah, index) => (
-            <Ayaths
-              key={index}
-              ayatNo={surah.nomorAyat}
-              arabic={surah.teksArab}
-              latin={surah.teksLatin}
-            />
+        ? surahAyaths.ayat.map((ayat, index) => (
+            <Ayaths key={index} ayat={ayat} />
           ))
         : null}
     </div>
