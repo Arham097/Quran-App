@@ -42,6 +42,9 @@ const Header = () => {
               <li className="hover:text-teal-400  text-white transition-all duration-200 ease-linear">
                 <Link to="/read-quran">Read Quran</Link>
               </li>
+              <li className="hover:text-teal-400  text-white transition-all duration-200 ease-linear">
+                <Link to="/juz">Juz</Link>
+              </li>
             </ul>
           </nav>
           <div className="sm:hidden">
@@ -62,7 +65,7 @@ const Header = () => {
 
       {/* Conditionally Rendered Div */}
       {toggle && (
-        <div className="w-full bg-teal-600 flex flex-col transition-all duration-1000 ease-in-out h-32 sm:hidden">
+        <div className="w-full bg-teal-600 flex flex-col transition-all duration-1000 ease-in-out sm:hidden">
           <nav clas>
             <ul
               className="flex flex-col gap-y-2 font-bold py-3 text-white "
@@ -73,9 +76,14 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="hover:text-teal-400  px-7 py-3">
+              <li className="hover:text-teal-400 border-b-2 px-7 py-3">
                 <Link to="/read-quran" onClick={toggleMenu}>
                   Read Quran
+                </Link>
+              </li>
+              <li className="hover:text-teal-400  px-7 py-3">
+                <Link to="/juz" onClick={toggleMenu}>
+                  Juz
                 </Link>
               </li>
             </ul>

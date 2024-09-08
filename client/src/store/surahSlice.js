@@ -22,8 +22,11 @@ const surahSlice = createSlice({
     setSurahAudio: (state, actions) => {
       state.surahAudio = actions.payload;
       console.log("audio", state.surahAudio);
+    },
+    setJuzz: (state, actions) => {
+      state.juzz = actions.payload;
     }
   }
 });
-export const { setSurahs, filterSurahs, getSurahById, setSurahAudio } = surahSlice.actions;
+export const { setSurahs, filterSurahs, getSurahById, setSurahAudio, setJuzz } = surahSlice.actions;
 export default surahSlice;
