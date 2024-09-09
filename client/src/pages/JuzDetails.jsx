@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import JuzzAyaths from "../components/JuzzAyaths";
+import { LuLoader2 } from "react-icons/lu";
 
 const JuzDetails = () => {
   const { no } = useParams();
@@ -9,9 +10,11 @@ const JuzDetails = () => {
   const navigate = useNavigate();
   const [audio, setAudio] = useState(0);
   const audioRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const res = await fetch(
         `https://api.alquran.cloud/v1/juz/${no}/quran-uthmaniy`
       );
@@ -22,7 +25,6 @@ const JuzDetails = () => {
     fetchData();
   }, [no]);
   const handleJuzz = () => {
-    console.log(juzzValue.current.value);
     navigate(`/juz/${juzzValue.current.value}`);
   };
   useEffect(() => {
@@ -30,6 +32,10 @@ const JuzDetails = () => {
       audioRef.current.load();
     }
   }, [audio]);
+
+  const handleAudioCanPlay = () => {
+    setLoading(false);
+  };
   return (
     <div className="w-full min-h-[89.5vh] bg-slate-200 relative flex justify-center overflow-hidden">
       <img src="/bg-islamic.png" alt="" className="w-full absolute" />
@@ -40,18 +46,20 @@ const JuzDetails = () => {
             ﷽{" "}
           </span>
         </div>
-        {ayahs.map((ayah, index) => (
-          <JuzzAyaths key={index} ayat={ayah} />
-        ))}
+        {ayahs.map(
+          (ayah, index) =>
+            ayah.number !== 1 && <JuzzAyaths key={index} ayat={ayah} />
+        )}
         {/* <Ayaths  /> */}
       </div>
-      <div className="w-full h-16 bg-teal-600 absolute bottom-0 flex items-center justify-around">
+      <div className="w-full h-16 bg-teal-600 absolute bottom-0 flex items-center justify-around border-none">
         <select
           name=""
           id=""
           onChange={handleJuzz}
           ref={juzzValue}
           className=" w-48 px-4 h-10 bg-white border-2 border-gray-400"
+          defaultValue={no}
         >
           <option value="1">Juz 1</option>
           <option value="2">Juz 2</option>
@@ -84,8 +92,18 @@ const JuzDetails = () => {
           <option value="29">Juz 29</option>
           <option value="30">Juz 30</option>
         </select>
-        <div className="w-3/12 h-10">
-          <audio controls className={`w-full h-10`} ref={audioRef}>
+        <div className="w-72 h-10 max-md:w-68 max-sm:w-64">
+          {loading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10">
+              <LuLoader2 className="animate-spin text-teal-700 text-4xl" />
+            </div>
+          )}
+          <audio
+            controls
+            className={`w-full h-10`}
+            ref={audioRef}
+            onCanPlay={handleAudioCanPlay}
+          >
             <source
               src={`https://ia803003.us.archive.org/14/items/ParaViseQuranMp3ReciteBySaudAl-Shuraim/${String(
                 audio

@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 import JuzBox from "../components/JuzBox";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Juz = () => {
   const juzzNo = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
+  const juzContainer = useRef(null);
+  useGSAP(() => {
+    gsap.from(juzContainer.current.children, {
+      y: 300,
+      duration: 0.7,
+      opacity: 0,
+      ease: "power1.out",
+      stagger: 0.1,
+    });
+  }, []);
 
   return (
     <div className="w-screen h-[680px] bg-slate-200 relative flex justify-center max-md:h-[800px] max-sm:h-[1120px]">
@@ -24,7 +36,10 @@ const Juz = () => {
             Read the Quran by Juz
           </span>
         </div>
-        <div className="w-full min-h-80 py-5 px-4 grid grid-cols-6 gap-x-2 gap-y-2 max-md:grid-cols-5 max-sm:grid-cols-3">
+        <div
+          className="w-full min-h-80 py-5 px-4 grid grid-cols-6 gap-x-2 gap-y-2 max-md:grid-cols-5 max-sm:grid-cols-3"
+          ref={juzContainer}
+        >
           {juzzNo.map((no, index) => (
             <JuzBox key={index} juzNo={no} />
           ))}

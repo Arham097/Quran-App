@@ -23,9 +23,9 @@ const Home = () => {
         Welcome to Al-Quran
       </h1>
       <p className="text-2xl font-semibold w-9/12 text-center max-md:text-xl max-sm:text-lg">
-        A Quran app that allows you to read the Quran in Arabic with Latin
-        translations and listen to recitations by various reciters, offering a
-        personalized spiritual experience.
+        Discover chapter-wise Quran study with Latin translations and 5 distinct
+        reciters in our app. Juz-wise views provide a uniform Arabic translation
+        with one reciter, ensuring clear and focused recitation.
       </p>
     </div>
   );

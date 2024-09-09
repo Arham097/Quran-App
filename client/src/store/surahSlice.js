@@ -21,7 +21,6 @@ const surahSlice = createSlice({
     },
     setSurahAudio: (state, actions) => {
       state.surahAudio = actions.payload;
-      console.log("audio", state.surahAudio);
     },
     setJuzz: (state, actions) => {
       state.juzz = actions.payload;
