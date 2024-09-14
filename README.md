@@ -1,6 +1,6 @@
 # Al Quran
 
-![Al Quran Banner](https://github.com/your-username/repository-name/blob/main/assets/image.JPG)
+![Al Quran Banner](https://github.com/Arham097/Quran-App/blob/main/assets/image.JPG)
 
 ## Overview
 
