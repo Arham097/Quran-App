@@ -33,7 +33,7 @@ I’m committed to continuously improving Al Quran with new features and updates
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/al-quran.git
+    https://github.com/Arham097/Quran-App.git
     ```
 
 2. Install dependencies:
@@ -43,12 +43,12 @@ I’m committed to continuously improving Al Quran with new features and updates
 
 3. Start the development server:
     ```bash
-    npm start
+    npm run dev
     ```
 
 4. Access the app at:
     ```bash
-    http://localhost:3000
+    http://localhost:5173
     ```
 
 ---
