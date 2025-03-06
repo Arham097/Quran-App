@@ -48,7 +48,7 @@ I’m committed to continuously improving Al Quran with new features and updates
 
 4. Access the app at:
     ```bash
-    http://localhost:5173
+    quran-app-jet.vercel.app/
     ```
 
 ---
