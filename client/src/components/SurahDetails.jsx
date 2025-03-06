@@ -14,6 +14,7 @@ const SurahDetails = ({
   const fetchSurah = async (surahNum) => {
     try {
       const result = await fetch(`https://equran.id/api/v2/surat/${surahNum}`);
+      console.log(result);
       const data = await result.json();
       dispatch(getSurahById(data.data));
       dispatch(setSurahAudio(data.data.audioFull));

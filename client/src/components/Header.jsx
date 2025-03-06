@@ -1,14 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const headerLinks = useRef(null);
-  const navigate = useNavigate();
 
   useGSAP(() => {
     if (!toggle) return;
